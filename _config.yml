@@ -112,7 +112,7 @@ exclude:
   - Gemfile.lock
 
 kramdown:
-  footnote_backlink: '&#x21a9;&#xfe0e;'
+  footnote_backlink:
   math_engine:       mathjax
   math_engine_opts:
     preview:         true
