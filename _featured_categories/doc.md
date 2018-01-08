@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Documents
+title: documents
 slug: doc
 menu: true
 submenu: true
-order: 7
+order: 1
 description: >
-  어플리케이션의 문서나 업데이트등이 담깁니다.
+  소소한 팁이나 문서 정리
 ---

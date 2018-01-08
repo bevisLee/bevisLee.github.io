@@ -1,10 +1,11 @@
 ---
 layout: list
-title: essay
-slug: essay
+title: ga
+slug: ga
 menu: true
 submenu: true
-order: 2
+order: 3
 description: >
-  그냥 끄저끄적
+  GA 관련 자료
+
 ---
