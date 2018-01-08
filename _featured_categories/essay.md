@@ -1,10 +1,10 @@
 ---
 layout: list
-title: essay
+title: Essay
 slug: essay
 menu: true
-submenu: true
-order: 2
+submenu: false
+order: 4
 description: >
-  그냥 끄저끄적
+  평소 생각과 쓰고싶은 글을 씁니다.
 ---
