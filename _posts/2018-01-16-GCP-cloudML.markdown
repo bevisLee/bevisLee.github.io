@@ -17,27 +17,62 @@ tags:
  [![Data Set RAW](/assets/img/post/2018-01-16-GCP-cloudML/1.png)](#)
 
  * Data Set 설명
+ [![Data Set 설명](/assets/img/post/2018-01-16-GCP-cloudML/2.png)](#)
 
 
 ## wide & deep
 
  이번 예측 분석에서는 Cloud에 많은 예시 중에서 wide & deep을 이용하였다. wide & deep에 대해서 알아보고 실습해보자.
  wide 선형 모델과 deep feed-forward 신경망으로 구성된 모델이다. 
-
+ [![wide & deep](/assets/img/post/2018-01-16-GCP-cloudML/4.png)](#)
 
  쉬운 이해를 위해, 가상의 APP을 개발하고 Service 한다는 가정으로 설명하겠다. 
  FoodIO는 사용자가 자신이 원하는 음식을 말하고(쿼리), FoodIO는 음식을 추천해 준다.
 
  * FoodIO ver 1.0
- 음식(쿼리 / 검색어)에 많이 일치하는 문자와 일치하는 항목을 사용자에게 추천 
- (사용자 : 프라이드 치킨 → FoodIO : 치킨 볶음밥)
+ - 음식(쿼리 / 검색어)에 많이 일치하는 문자와 일치하는 항목을 사용자에게 추천 
+ - (사용자 : 프라이드 치킨 → FoodIO : 치킨 볶음밥)
 
  * FoodIO ver 2.0 : wide 모델 적용
- 쿼리에 동시 발생 대상 레이블과 상관 관계가 있는지 파악 후 기억(추천)
- (사용자 : 프라이드 치킨 → FoodIO : 치킨 볶음밥, 치킨과 와플, ....)
+ - 쿼리에 동시 발생 대상 레이블과 상관 관계가 있는지 파악 후 기억(추천)
+ - (사용자 : 프라이드 치킨 → FoodIO : 치킨 볶음밥, 치킨과 와플, ....)
+ [![wide](/assets/img/post/2018-01-16-GCP-cloudML/5.png)](#)
 
+ * FoodIO ver 3.0 : deep 모델 적용
+ - TensorFlow Deep Feed-Forward Neural Network 교육하여, 저 차원 밀도 표현(벡터)가 임베팅 공간에서 서로 가깝게 있는 쿼리와 
+ 쿼리를 일치 시켜 일반화
+ - (사용자 : 프라이드 치킨 → FoodIO : 치킨 볶음밥, 새우 볶음밥, ... / FoodIO : 치킨과 와플, 후라이드 치킨, 버거, ...)
+ [![deep](/assets/img/post/2018-01-16-GCP-cloudML/6.png)](#)
 
- * FoodIO ver 3.0 : Deep 모델 적용
+ * FoodIO ver 4.0 : wide & deep 모델 적용
+ - 이전 버전에서 때때로 너무 많이 일반화 되고, 무관한 요리를 추천하게 되는 현상이 발생
+ - wide & deep 모델을 사용하여, wide 모델과 deep 모델이 유사한 항목(동일한 추천)을 일반화 하여 사용자가 원하는 음식을 추천 
+ [![wide & deep2](/assets/img/post/2018-01-16-GCP-cloudML/7.png)](#)
 
- [![FoodIO deep](https://github.com/bevisLee/bevisLee.github.io/tree/master/assets/img/post/2018-01-16-GCP-cloudML/6.jpg)](#)
+## Clone the example repo
+ 
+ Google Cloud Shell에서 repo를 복사하겠다.
+ > cloudshell_open --repo_url "https://github.com/googlecloudplatform/cloudml-samples"; --page "editor" --open_in_editor "census/estimator"
 
+ Shell을 실행한 위치에 cloudml-samples 폴더가 생성된 것을 확인 할 수 있다. 만약에 Shell에서 튕기더라도, 아래의 이미지와 같이 이동하여
+ 명령어를 실행하면 된다.
+  [![cloud shell](/assets/img/post/2018-01-16-GCP-cloudML/8.png)](#)
+
+## Run your training job in the cloud
+
+ 환경 셋팅을 위하여 아래의 작업을 실행 한다.
+ > PROJECT_ID=$(gcloud config list project --format "value(core.project)") 
+ > BUCKET_NAME=${PROJECT_ID}-mlengine 
+ > REGION=us-central1
+
+ 위의 설정 내역을 확인하기 위해서는 아래와 같이 실행한다.
+ > echo $PROJECT_ID
+ > echo $BUCKET_NAME
+ > echo $REGION
+
+ 버킷을 생성하여, Adult Data 와 ML이 학습한 결과를 저장하도록 한다.
+ > gsutil mb -l $REGION gs://$BUCKET_NAME
+ # 실행 결과
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/9.png)](#)
+
+ 
