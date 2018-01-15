@@ -97,16 +97,16 @@ tags: cloudml
  
  예측 Job 실행
  > gcloud ml-engine jobs submit training $JOB_NAME \
-   --job-dir $OUTPUT_PATH \ 
-   --runtime-version 1.4 \ 
-   --module-name trainer.task \ 
-   --package-path trainer/ \ 
-   --region $REGION \ 
-   -- \ 
-   --train-files $TRAIN_DATA \ 
-   --eval-files $EVAL_DATA \ 
-   --train-steps 5000 \ 
-   --verbosity DEBUG
+ >  --job-dir $OUTPUT_PATH \ 
+ >  --runtime-version 1.4 \ 
+ >  --module-name trainer.task \ 
+ >  --package-path trainer/ \ 
+ >  --region $REGION \ 
+ >  -- \ 
+ >  --train-files $TRAIN_DATA \ 
+ >  --eval-files $EVAL_DATA \ 
+ >  --train-steps 5000 \ 
+ >  --verbosity DEBUG
 
  - 실행 결과
  [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/12.png)](#)
