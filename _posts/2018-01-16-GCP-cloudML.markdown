@@ -2,7 +2,7 @@
 layout: post
 title:  "Qwiklabs - Cloud ML Engine"
 subtitle:   "Cloud ML Engine - wide & Deep"
-categories: gcp
+categories: GCP
 tags: 
 ---
 
@@ -60,7 +60,7 @@ tags:
 
 ## Run your training job in the cloud
 
- 환경 셋팅을 위하여 아래의 작업을 실행 한다.
+ Project ID, Bucket, Region 환경 셋팅을 한다.
  > PROJECT_ID=$(gcloud config list project --format "value(core.project)") 
  > BUCKET_NAME=${PROJECT_ID}-mlengine 
  > REGION=us-central1
@@ -70,9 +70,46 @@ tags:
  > echo $BUCKET_NAME
  > echo $REGION
 
- 버킷을 생성하여, Adult Data 와 ML이 학습한 결과를 저장하도록 한다.
+ 버킷을 생성하여, Adult Data 와 ML이 학습한 결과를 저장할 예정이다.
  > gsutil mb -l $REGION gs://$BUCKET_NAME
- # 실행 결과
+ 
+ 실행 결과
  [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/9.png)](#)
 
+ 생성된 버킷에 Adult Data (train / eval)을 저장겠다.
+ > gsutil -m cp gs://cloudml-public/census/data/* gs://$BUCKET_NAME/data
+
+ 실행 결과
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/10.png)](#)
+
+ train 과 eval data를 바라보도록 환경 설정을 한다.
+ > TRAIN_DATA=gs://$BUCKET_NAME/data/adult.data.csv 
+ > EVAL_DATA=gs://$BUCKET_NAME/data/adult.test.csv
+
+ 실행 결과
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/11.png)](#)
+
+## 클라우드에서 단일 인스턴트 트레이너 실행
+
+ Job Name, Output 경로 환경 설정 한다. 
+ > JOB_NAME=census1 
+ > OUTPUT_PATH=gs://$BUCKET_NAME/$JOB_NAME 
  
+ 예측 Job 실행
+ > gcloud ml-engine jobs submit training $JOB_NAME \
+   --job-dir $OUTPUT_PATH \ 
+   --runtime-version 1.4 \ 
+   --module-name trainer.task \ 
+   --package-path trainer/ \ 
+   --region $REGION \ 
+   -- \ 
+   --train-files $TRAIN_DATA \ 
+   --eval-files $EVAL_DATA \ 
+   --train-steps 5000 \ 
+   --verbosity DEBUG
+
+ 실행 결과
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/12.png)](#)
+
+
+
