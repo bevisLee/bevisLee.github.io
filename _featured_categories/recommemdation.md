@@ -1,6 +1,6 @@
 ---
 layout: list
-title: recommendation
+title: Recommendation
 slug: RecommendationEngines
 menu: true
 submenu: true

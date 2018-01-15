@@ -2,7 +2,7 @@
 layout: tag-blog
 title: etc
 slug: etc
-category: doc
+category: Documents
 menu: false
 order: 1
 ---

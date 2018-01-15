@@ -1,6 +1,6 @@
 ---
 layout: list
-title: essay
+title: Essay
 slug: essay
 menu: true
 submenu: true

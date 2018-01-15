@@ -1,6 +1,6 @@
 ---
 layout: list
-title: gcp
+title: GCP
 slug: google cloud platform
 menu: true
 submenu: true

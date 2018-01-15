@@ -1,6 +1,6 @@
 ---
 layout: list
-title: documents
+title: Documents
 slug: doc
 menu: true
 submenu: true
