@@ -14,7 +14,7 @@ tags:
  Cloud ML Engine 에서는 Adult Data Set을 이용하여, 연소득 5만달러 초과자를 예측하는 것이다. 
 
  * Data Set RAW
- [Data Set RAW](https://github.com/bevisLee/bevisLee.github.io/tree/master/assets/img/post/2018-01-16-GCP-cloudML/1.jpg)
+ (https://github.com/bevisLee/bevisLee.github.io/tree/master/assets/img/post/2018-01-16-GCP-cloudML/1.jpg)(#)
  <img src="https://github.com/bevisLee/bevisLee.github.io/tree/master/assets/img/post/2018-01-16-GCP-cloudML/1.jpg?raw=true">
 
  * Data Set 설명
