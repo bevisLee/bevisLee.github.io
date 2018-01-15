@@ -1,7 +1,7 @@
 ---
 layout: list
 title: GCP
-slug: google cloud platform
+slug: GCP
 menu: true
 submenu: true
 order: 5

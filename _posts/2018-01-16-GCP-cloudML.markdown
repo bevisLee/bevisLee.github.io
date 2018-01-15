@@ -3,7 +3,7 @@ layout: post
 title:  "Qwiklabs - Cloud ML Engine"
 subtitle:   "Cloud ML Engine - wide & Deep"
 categories: GCP
-tags: 
+tags: cloudml
 ---
 
 ## 들어가기
@@ -73,20 +73,20 @@ tags:
  버킷을 생성하여, Adult Data 와 ML이 학습한 결과를 저장할 예정이다.
  > gsutil mb -l $REGION gs://$BUCKET_NAME
  
- 실행 결과
+ - 실행 결과
  [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/9.png)](#)
 
  생성된 버킷에 Adult Data (train / eval)을 저장겠다.
  > gsutil -m cp gs://cloudml-public/census/data/* gs://$BUCKET_NAME/data
 
- 실행 결과
+ - 실행 결과
  [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/10.png)](#)
 
  train 과 eval data를 바라보도록 환경 설정을 한다.
  > TRAIN_DATA=gs://$BUCKET_NAME/data/adult.data.csv 
  > EVAL_DATA=gs://$BUCKET_NAME/data/adult.test.csv
 
- 실행 결과
+ - 실행 결과
  [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/11.png)](#)
 
 ## 클라우드에서 단일 인스턴트 트레이너 실행
@@ -108,8 +108,35 @@ tags:
    --train-steps 5000 \ 
    --verbosity DEBUG
 
- 실행 결과
+ - 실행 결과
  [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/12.png)](#)
 
+ 예측 Job log 확인
+ > gcloud ml-engine jobs stream-logs $JOB_NAME
+
+ - 실행 결과
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/13.png)](#)
+
+ Google Cloud Shell이 아닌, Google Cloud Platform에서도 확인이 가능하다. Menu > ML 엔진 > 작업 > 로그 보기
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/14.png)](#)
+
+ Output 저장
+ > gsutil ls -r $OUTPUT_PATH
+
+ - 실행 결과
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/15.png)](#)
+
+ TensorBoard 실행
+ > tensorboard --logdir=$OUTPUT_PATH --port=8080
+
+ - 실행 결과
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/16.png)](#)
+ 
+ 실행된 결과 페이지에서 http://cs-6000-devshell-vm-32b33e7a-e588-4dca-9dbc-38159f7b45e1:8080 을 클릭하면 새탭에서
+ TensorBoard가 출력된다.
+
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/17.png)](#)
+
+ 
 
 
