@@ -8,7 +8,7 @@ tags: cloudml
 
 ## 들어가기
 
- Google Cloud Platform을 잘 사용하기 위해, 여러 스터디에 참석하면서 [Qwiklabs](https://google.qwiklabs.com)에 대해 알게 되었다. 
+ Google Cloud Platform을 활용한 데이터 분석을 목표로, 여러 스터디에 참석하면서 [Qwiklabs](https://google.qwiklabs.com)에 대해 알게 되었다. 
  Qwiklabs에는 10개 카테고리로 구성되어 있다. 필자는 여러 카테고리 중 ML 관련된 사항에 대해 정리하고자 한다. 
 
  Cloud ML Engine 에서는 Adult Data Set을 이용하여, 연소득 5만달러 초과자를 예측하는 것이다. 
