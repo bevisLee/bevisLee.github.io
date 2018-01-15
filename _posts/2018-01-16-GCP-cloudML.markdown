@@ -96,46 +96,36 @@ tags: cloudml
  > OUTPUT_PATH=gs://$BUCKET_NAME/$JOB_NAME 
  
  예측 Job 실행
- > gcloud ml-engine jobs submit training $JOB_NAME \
- >  --job-dir $OUTPUT_PATH \ 
- >  --runtime-version 1.4 \ 
- >  --module-name trainer.task \ 
- >  --package-path trainer/ \ 
- >  --region $REGION \ 
- >  -- \ 
- >  --train-files $TRAIN_DATA \ 
- >  --eval-files $EVAL_DATA \ 
- >  --train-steps 5000 \ 
- >  --verbosity DEBUG
+ > gcloud ml-engine jobs submit training $JOB_NAME --job-dir $OUTPUT_PATH --runtime-version 1.4 --module-name trainer.task --package-path trainer/ --region $REGION -- --train-files $TRAIN_DATA --eval-files $EVAL_DATA --train-steps 5000 --verbosity DEBUG
 
  - 실행 결과
- [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/12.png)](#)
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/13.png)](#)
 
  예측 Job log 확인
  > gcloud ml-engine jobs stream-logs $JOB_NAME
 
  - 실행 결과
- [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/13.png)](#)
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/14.png)](#)
 
  Google Cloud Shell이 아닌, Google Cloud Platform에서도 확인이 가능하다. Menu > ML 엔진 > 작업 > 로그 보기
- [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/14.png)](#)
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/15.png)](#)
 
  Output 저장
  > gsutil ls -r $OUTPUT_PATH
 
  - 실행 결과
- [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/15.png)](#)
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/16.png)](#)
 
  TensorBoard 실행
  > tensorboard --logdir=$OUTPUT_PATH --port=8080
 
  - 실행 결과
- [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/16.png)](#)
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/17.png)](#)
  
  실행된 결과 페이지에서 http://cs-6000-devshell-vm-32b33e7a-e588-4dca-9dbc-38159f7b45e1:8080 을 클릭하면 새탭에서
  TensorBoard가 출력된다.
 
- [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/17.png)](#)
+ [![버킷 생성](/assets/img/post/2018-01-16-GCP-cloudML/18.png)](#)
 
  
 
