@@ -15,7 +15,8 @@ tags:
 
  * Data Set RAW
  [Data Set RAW](https://github.com/bevisLee/bevisLee.github.io/tree/master/assets/img/post/2018-01-16-GCP-cloudML/1.jpg)
- 
+ <img src="https://github.com/bevisLee/bevisLee.github.io/tree/master/assets/img/post/2018-01-16-GCP-cloudML/1.jpg?raw=true">
+
  * Data Set 설명
  [Data Set 설명](https://github.com/bevisLee/bevisLee.github.io/tree/master/assets/img/post/2018-01-16-GCP-cloudML/2.jpg)
 
