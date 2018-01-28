@@ -3,7 +3,7 @@ layout: post
 title:  "Qwiklabs - Cloud ML Engine"
 subtitle:   "Cloud ML Engine - wide & Deep"
 categories: GCP
-tags: cloudml
+tags: cloudML
 ---
 
 ## 들어가기

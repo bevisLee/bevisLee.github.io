@@ -3,7 +3,7 @@ layout: post
 title:  "PR12-060: Deep Neural Networks for YouTube Recommendations - YouTube"
 subtitle:   "Cloud ML Engine - wide & Deep"
 categories: Data
-tags: paper
+tags: Papers
 ---
 
 
@@ -13,10 +13,10 @@ tags: paper
  작년부터 시작된 PR12의 유튜브 동영상을 참고하여 내가 관심 갖는 주제에 대해서는 정리하여 포스팅을 하고자 하였다.
  이번에 선택한 논문은 YouTube에서 사용된 실제 논문으로 추천시스템 공부를 계속 진행해왔기 때문에 제목을 보자 마자 시청한 논문이다.
 
- * youtube - [youtube](https://www.youtube.com/watch?v=V6zixdCIOqw&feature=youtu.be)
- * slide - [slideshare](https://www.slideshare.net/keunbongkwak/deep-neural-networks-for-youtube-recommendations)
- * blog - [blog](http://keunwoochoi.blogspot.kr/2016/09/deep-neural-networks-for-youtube.html)
- * papers - [papers](https://static.googleusercontent.com/media/research.google.com/ko//pubs/archive/45530.pdf)
+ * youtube - [youtube 링크](https://www.youtube.com/watch?v=V6zixdCIOqw&feature=youtu.be)
+ * slide - [slideshare 링크](https://www.slideshare.net/keunbongkwak/deep-neural-networks-for-youtube-recommendations)
+ * blog - [blog 링크](http://keunwoochoi.blogspot.kr/2016/09/deep-neural-networks-for-youtube.html)
+ * papers - [papers 링크](https://static.googleusercontent.com/media/research.google.com/ko//pubs/archive/45530.pdf)
 
 
 ## 개요
