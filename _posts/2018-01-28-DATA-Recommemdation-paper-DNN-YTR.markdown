@@ -2,7 +2,7 @@
 layout: post
 title:  "PR12-060: Deep Neural Networks for YouTube Recommendations - YouTube"
 subtitle:   "Cloud ML Engine - wide & Deep"
-categories: Recommendation
+categories: Data
 tags: paper
 ---
 
