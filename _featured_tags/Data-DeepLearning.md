@@ -3,6 +3,6 @@ layout: tag-blog
 title: Deeplearning
 slug: Deeplearning
 category: Data
-menu: True
+menu: false
 order: 4
 ---

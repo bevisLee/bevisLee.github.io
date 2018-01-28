@@ -7,5 +7,4 @@ submenu: true
 order: 3
 description: >
   Digital Marketing 관련 자료 : ga, gtm, crawling, etc
-
 ---

@@ -3,6 +3,6 @@ layout: tag-blog
 title: Recommendation
 slug: Recommendation
 category: Data
-menu: True
+menu: false
 order: 4
 ---

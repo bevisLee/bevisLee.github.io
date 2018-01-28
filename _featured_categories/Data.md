@@ -7,5 +7,4 @@ submenu: true
 order: 4
 description: >
   Deep Learning 관련 자료
-
 ---
