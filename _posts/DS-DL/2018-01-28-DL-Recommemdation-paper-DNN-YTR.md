@@ -2,7 +2,7 @@
 layout: post
 title:  "PR12-060: Deep Neural Networks for YouTube Recommendations - YouTube"
 comments: true
-categories : [Data Science/DL]
+categories : [Data Science/Deep Learning]
 tags: [Paper, Recommendation]
 
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "Lecture 1: Introduction to Reinforcement Learning"
 comments: true
-categories : [Data Science/RL]
+categories : [Data Science/Reinforcement Learning]
 tags: [RL]
 
 ---
