@@ -2,7 +2,7 @@
 layout: post
 title: "Lecture 2: Markov Decision Process"
 comments: true
-categories : [Data Science/Reinforcement Learning]
+categories : [DS/RL]
 tags: [RL]
 
 ---
