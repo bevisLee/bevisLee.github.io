@@ -1,129 +1,97 @@
-# -----------------------------------------------------------------------------
-#  User configuration
-# -----------------------------------------------------------------------------
+# SITE CONFIGURATION
+baseurl:
+url: "https://bevislee.github.io"
 
-title:               bevis
+# THEME-SPECIFIC CONFIGURATION
+theme_settings:
+  # Meta
+  title: bevislee
+  avatar: assets/img/blogmark.png
+  favicon: assets/favicon.ico
+  gravatar: # Email MD5 hash
+  description: "data scientis blog" # used by search engines
 
-# The unique resource location of your page.
-# Set to `https://<username>.github.io` when hosting on GitHub Pages
-url:                 https://bevisLee.github.io
+  # Header and footer text
+  header_text: >
+     <p>bevis blog</p>
 
-# Set to '' when hosting a blog on GitHub Pages, ie on `//<username>.github.io`
-# Set to '/<reponame>' when using the `gh-pages` branch of a repository
-baseurl:             ""
+  header_text_feature_image:
+  footer_text: >
+   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
 
-# A very short description of your page
-tagline:             삽질이 생활인 데이터 분석가
+  # Icons
+  rss: true
+  email_address: "byzun0@gmail.com" # Full email address, e.g. "sam@example.com"
+  behance:
+  bitbucket:
+  dribbble:
+  facebook:
+  flickr:
+  gitlab:
+  github: "bevislee"
+  google_plus:
+  instagram:
+  linkedin:  # Full URL
+  pinterest:
+  reddit:
+  soundcloud:
+  stack_exchange:  # Full URL
+  steam:
+  tumblr:
+  twitter:
+  wordpress:
+  youtube:
 
-# A short description of the page, used in the sidebar and as fallback for the meta description tag.
-# Markdown enabled, but don't use more than one paragraph (enforced by `>`)
-description:         >
-  호기심이 많아, 삽질이 생활인 데이터 분석가
+  # Scripts
+  google_analytics:  # Tracking ID, e.g. "UA-000000-01"
+  disqus_shortname: bevielee
+  katex: true # Enable if using math markup
+  search: true # Enable the search feature
 
-# This should be the same author as first entry in `_data/authors.yml`
-author:
-  name:              bevis Lee
-  email:             byzun0@gmail.com
+  # Localization strings
+  str_follow_on: "Follow on"
+  str_rss_follow: "Follow RSS feed"
+  str_email: "Email"
+  str_next_post: "Next post"
+  str_previous_post: "Previous post"
+  str_next_page: "Next"
+  str_previous_page: "Prev"
+  str_continue_reading: "Continue reading"
+  str_javascript_required_disqus: "Please enable JavaScript to view comments."
+  str_search_no_results: "No results found."
 
-# Fallback image and color
-image:               /assets/img/nap.jpg
-color:               '#4f86aa'
+  # Colours, typography and padding
+  # Open the "_sass > base" folder, and open "_variables.scss"
+  google_fonts: "Nanum+Gothic:400,700"
 
-# The font used for headings. Expects a string that is a valid CSS font-family value.
-font_heading:        "'Lato', 'Sans-serif'"
+  # Post navigation
+  post_navigation: true
 
-# The text font. Expects a string that is a valid CSS font-family value.
-font:                "'Lato', 'Sans-serif'"
+encoding: 'utf-8'
+# Configure the plugin here
+category_path: "category" # <- default value
+category_layout: "category.html" # <- default value
 
-# The string encoding what fonts to fetch from Google Fonts.
-# See: https://qwtel.com/hydejack/docs/configuration/
-google_fonts:        Lato
+# PAGINATION
+paginate: 5
+paginate_path: "blog/page:num"
 
-# If you do not use a Google Fonts, uncomment the line below
-# no_google_fonts:     true
+animation: true
 
-# Set your Google Analytics id to receive `pageview` events.
-# To remove Google Anaylics from your page, remove the line below.
-google_analytics:    UA-57016199-2
-
-# Setting a disqus shortname will enable the comment section on pages with `comments: true` in the front matter
-disqus_shortname:    bevis
-
-# This text will appear in the footer of every page. Markdown enabled.
-copyright:           '&copy; 2018. by bevis'
-
-# Format of the permalinks
-permalink:           pretty
-
-# Pagination configuration (used by the `blog` layout)
-paginate:            8
-paginate_path:       '/page-:num/'
-
-# If you are upgrading form a v5 verison of Hydejack, uncomment the two lines below,
-# so that the location of the feed XML stays the same.
-# feed:
-#   path:              atom.xml
-
-# Set to true when building with the `--lsi` option
-# See: https://jekyllrb.com/docs/variables/#site-variables
-# use_lsi:             true
-
-# Set to `true` if you don't want to show an icon after each link that opens to an external site
-# no_mark_external:    true
-
-# Uncomment this line if third party plugins fail to work with dynimically loaded pages
-# disable_push_state:  true
-
-# Uncomment this line if want to disable the touch drawer on mobile
-# disable_drawer: true
-
-# -----------------------------------------------------------------------------
-#  Collections
-# -----------------------------------------------------------------------------
-
-collections:
-  featured_categories:
-    permalink:       /category/:name/
-    output:          true
-  featured_tags:
-    permalink:       /tag/:name/
-    output:          true
-  projects:
-    permalink:       /projects/:path/
-    output:          true
-
-# -----------------------------------------------------------------------------
-#  Advanced configuration
-# -----------------------------------------------------------------------------
-
-gems:
-  - jekyll-feed
-  - jekyll-sitemap
+# BUILD SETTINGS
+markdown: kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: :compressed
+plugins:
   - jekyll-paginate
-  - jekyll-redirect-from
-
+  - jekyll-category-pages
+gem:
+    - jekyll-sitemap
+    - jekyll-feed
+    - wdm
+theme: jekyll-theme-type
 exclude:
-  - README.md
-  - LICENSE.md
-  - node_modules
-  - package.json
-  - package-lock.json
   - Gemfile
   - Gemfile.lock
-
-kramdown:
-  footnote_backlink: '&#x21a9;&#xfe0e;'
-  math_engine:       mathjax
-  math_engine_opts:
-    preview:         true
-    preview_as_code: true
-
-compress_html:
-  comments:          ["<!-- ", " -->"]
-  clippings:         all
-  endings:           all
-  ignore:
-    envs:            [development]
-
-sass:
-  style:             compressed
