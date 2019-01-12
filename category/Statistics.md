@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Data Science/Statistics
-permalink: '/DS/Stat'
+permalink: '/Data Science/Statistics'
 ---
 
 Another sample category page.

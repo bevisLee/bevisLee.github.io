@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Data Science/Machine Learning
-permalink: '/DS/ML'
+permalink: '/Data Science/Machine Learning'
 ---
 
 Another sample category page.
