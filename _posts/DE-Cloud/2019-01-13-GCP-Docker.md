@@ -14,24 +14,20 @@ tags: [Docker]
 * Docker는 커널 컨테이너 기능을 워크 플로우와 결합하여 응용 프로그램을 관리하고 배포하는데 도움을 줍니다.
 * Docker 컨테이너는 Kubernetes에서 직접 사용할 수 있으므로, Kubernetes 엔진에서 쉽게 실행 할 수 있습니다. Docker의 핵심을 배우면 Kubernetes 및 컨테이너 응용 프로그램 개발을 시작할 수 있습니다.
  
-### Intro
+## Intro
 
 * 도커에 사용 경험이 적어, 퀵랩에 나온 내용을 실행하고, 결과를 적어 놓는 방식으로 포스팅하고자 합니다.
 
-### Docker run hello-world : Docker 이미지 생성
-
+#### Docker run hello-world : Docker 이미지 생성
 * 이 간단한 컨테이너가 `Hello from Docker!` 화면으로 돌아감
 * 명령은 간단하지만 수행된 단계의 수를 출력에 표시
 * docker 데몬은 hello-world 이미지를 검색하고, 로컬에 이미지가 없다면 Docker Hub라는 공개 레지스트르에서 이미지를 가져와서 컨테이너 이미지를 생성
 
-
 ```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker run hello-world
-
 ```
 
-### docker images : 가져온 이미지를 정보 출력
-
+#### docker images : 가져온 이미지를 정보 출력
 
 ```{r, engine='bash', count_lines}
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker images
@@ -39,7 +35,7 @@ tags: [Docker]
 ```
 
 
-### docker ps : 실행중인 컨테이너 정보 출력
+#### docker ps : 실행중인 컨테이너 정보 출력
 * 실행중인 컨테이너 출력
 
 
@@ -67,20 +63,17 @@ tags: [Docker]
 
 # Use an official Node runtime as the parent image
 FROM node:6
-
 # Set the working directory in the container to /app
 WORKDIR /app
-
 # Copy the current directory contents into the container at /app
 ADD . /app
-
 # Make the container's port 80 available to the outside world
 EXPOSE 80
-
 # Run app.js using node when the container launches
 CMD ["node", "app.js"]
 EOF
-```
+
+x```
 
 
 * app.js 생성
