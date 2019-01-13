@@ -20,43 +20,15 @@ tags: [Docker]
 
 ### Docker run hello-world : Docker 이미지 생성
 
-
-```{r, engine='bash', count_lines}
-> cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker run hello-world
-
-Unable to find image 'hello-world:latest' locally
-latest: Pulling from library/hello-world
-1b930d010525: Pull complete
-Digest: sha256:92c7f9c92844bbbb5d0a101b22f7c2a7949e40f8ea90c8b3bc396879d95e899a
-Status: Downloaded newer image for hello-world:latest
-
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-
-To generate this message, Docker took the following steps:
- 1. The Docker client contacted the Docker daemon.
- 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
-    (amd64)
- 3. The Docker daemon created a new container from that image which runs the
-    executable that produces the output you are currently reading.
- 4. The Docker daemon streamed that output to the Docker client, which sent it
-    to your terminal.
-
-To try something more ambitious, you can run an Ubuntu container with:
- $ docker run -it ubuntu bash
-
-Share images, automate workflows, and more with a free Docker ID:
- https://hub.docker.com/
-
-For more examples and ideas, visit:
- https://docs.docker.com/get-started/
-```
----
-
 * 이 간단한 컨테이너가 `Hello from Docker!` 화면으로 돌아감
 * 명령은 간단하지만 수행된 단계의 수를 출력에 표시
 * docker 데몬은 hello-world 이미지를 검색하고, 로컬에 이미지가 없다면 Docker Hub라는 공개 레지스트르에서 이미지를 가져와서 컨테이너 이미지를 생성
 
+
+```{r, engine='bash', count_lines}
+> cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker run hello-world
+
+```
 
 ### docker images : 가져온 이미지를 정보 출력
 
