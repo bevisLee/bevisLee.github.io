@@ -29,9 +29,8 @@ tags: [Docker]
 
 #### docker images : 가져온 이미지를 정보 출력
 
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker images
-
 ```
 
 
@@ -39,18 +38,16 @@ tags: [Docker]
 * 실행중인 컨테이너 출력
 
 
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker ps
-
 ```
 
 
 * 실행완료까지 포함된 컨테이너 출력
 
 
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker ps -a
-
 ```
 
 
@@ -58,7 +55,7 @@ tags: [Docker]
 * Dockerfile 생성
 
 
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ cat > Dockerfile << EOF
 
 # Use an official Node runtime as the parent image
@@ -72,14 +69,13 @@ EXPOSE 80
 # Run app.js using node when the container launches
 CMD ["node", "app.js"]
 EOF
-
-x```
+```
 
 
 * app.js 생성
 
 
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ cat > app.js << EOF
 
 const http = require('http');
@@ -109,7 +105,7 @@ EOF
 	* 실행을 완료하는데 몇분 정도 걸림
 
 
-```#{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker build -t node-app:0.1 .
 
 Sending build context to Docker daemon  3.072kB
@@ -147,9 +143,8 @@ Successfully tagged node-app:0.1
 * 빌드한 Docker 이미지 정보 출력
 
 
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker images
-
 ```
 
 
@@ -157,7 +152,7 @@ Successfully tagged node-app:0.1
 * 컨테이너 실행
 
 	
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker run -p 4000:80 --name my-app node-app:0.1
  
 Server running at http://0.0.0.0:80/
@@ -167,7 +162,7 @@ Server running at http://0.0.0.0:80/
 * 다른 터미널을 열어, 서버 테스트
 
 	
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ curl http://localhost:4000
  
 Hello world
@@ -177,7 +172,7 @@ Hello world
 * 컨테이너 종료/삭제
 
 	
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker stop my-app && docker rm my-app
  
 my-app
@@ -188,7 +183,7 @@ my-app
 * 컨테이너 백그라운드 실행, 컨테이너 출력
 
 	
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker run -p 4000:80 --name my-app -d node-app:0.1
 
 > docker ps
@@ -203,7 +198,7 @@ d26e0a8a67e0        node-app:0.1        "node app.js"       7 seconds ago       
 	* 컨테이너가 실행중일 때 로그를 출력하려면 -f
 
 	
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker logs [container_id]
 
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker logs -f [container_id]
@@ -213,7 +208,7 @@ d26e0a8a67e0        node-app:0.1        "node app.js"       7 seconds ago       
 * 기존 app.js 수정
 
 	
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ vim app.js 
 
 ## 1.0
@@ -258,14 +253,14 @@ Successfully tagged node-app:0.2
 	* 4000은 이미 사용중이라서, 8080으로 새롭게 실행
 
 	
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker run -p 8080:80 --name my-app-2 -d node-app:0.2
 
 > docker ps
 ```
 
 
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ curl http://localhost:8080
 Welcome to Cloud
 
@@ -279,7 +274,7 @@ Hello World
 * 실행중인 컨테이너에서 대화식 Bash 세션을 시작하기를 원할 때, docker exec를 사용하려 실행 (다른 터미널을 열고 실행)
 
 	
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker exec -it [container_id] bash
 
 > ls
@@ -291,7 +286,7 @@ Hello World
 * 컨테이너 메타 데이터 검사
 
 	
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker inspect [container_id]
 ```
 
@@ -299,7 +294,7 @@ Hello World
 * 컨테이너 메타 데이터의 특정 필드 검사
 
 	
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker inspect [container_id]
  
 172.18.0.2
@@ -311,7 +306,7 @@ Hello World
 * `node-app:0.2`를 `project-id`로 대체 구성
 
 	
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker tag node-app:0.2 gcr.io/[project-id]/node-app:0.2
 
 > docker images
@@ -327,7 +322,7 @@ Hello World
 	* `node:6` 노드 이미지를 제거하기 전에 하위 이미지 (of)를 제거해야 함
 
 
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker stop $(docker ps -q)
 
 > docker rm $(docker ps -aq)
