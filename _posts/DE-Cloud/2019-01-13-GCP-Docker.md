@@ -25,7 +25,7 @@ tags: [Docker]
 * docker 데몬은 hello-world 이미지를 검색하고, 로컬에 이미지가 없다면 Docker Hub라는 공개 레지스트르에서 이미지를 가져와서 컨테이너 이미지를 생성
 
 
-```{r, engine='bash', count_lines}
+```
 > cloudshell@cloudshell :~ (qwiklabs-gcp-...)$ docker run hello-world
 
 ```
