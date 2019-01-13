@@ -2,7 +2,7 @@
 layout: post
 title: "git push 명령어"
 comments: true
-categories : [DE-Cloud]
+categories : [DE/Cloud]
 tags: [Git]
 ---
 
