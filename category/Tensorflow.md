@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Data Science/Tensorflow
-permalink: '/ds/tensorflow'
+permalink: '/DS/Tensorflow'
 ---
 
 Another sample category page.

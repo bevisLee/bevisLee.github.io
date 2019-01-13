@@ -2,7 +2,7 @@
 layout: post
 title: "Qwiklabs - Cloud ML Engine"
 comments: true
-categories : [de/cloud]
+categories : [DE/Cloud]
 tags: [GCP,cloudML]
 
 ---

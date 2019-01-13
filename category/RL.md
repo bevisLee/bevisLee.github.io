@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Data Science/Reinforcement Learning
-permalink: '/ds/rl'
+permalink: '/DS/RL'
 ---
 
 Another sample category page.
