@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Data Engine/Cloud
+title: DE/Cloud
 permalink: '/DE/Cloud'
 ---
 

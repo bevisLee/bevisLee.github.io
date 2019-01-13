@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Data Science/Reinforcement Learning
+title: DS/RL
 permalink: '/DS/RL'
 ---
 

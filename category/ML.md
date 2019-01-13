@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Data Science/Machine Learning
+title: DS/ML
 permalink: '/DS/ML'
 ---
 

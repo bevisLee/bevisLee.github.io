@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Data Science/Deep Learning
+title: DS/DL
 permalink: '/DS/DL'
 ---
 

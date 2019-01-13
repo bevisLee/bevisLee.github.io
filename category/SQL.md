@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Data Base/SQL
+title: DB/SQL
 permalink: '/DB/SQL'
 ---
 

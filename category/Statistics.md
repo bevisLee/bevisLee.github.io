@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Data Science/Statistics
+title: DS/Statistics
 permalink: '/DS/Statistics'
 ---
 
