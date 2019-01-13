@@ -51,7 +51,7 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
-
+---
 
 * 이 간단한 컨테이너가 `Hello from Docker!` 화면으로 돌아감
 * 명령은 간단하지만 수행된 단계의 수를 출력에 표시
