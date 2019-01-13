@@ -2,7 +2,7 @@
 layout: post
 title: "Study 발표 자료 : linear regression 01"
 comments: true
-categories : [DE/Cloud]
+categories : [Data Engine/Cloud]
 tags: [GCP,cloudML]
 
 ---
