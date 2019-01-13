@@ -1,6 +1,6 @@
 ---
 layout: category
-title: DS/Tensorflow
+title: DS-Tensorflow
 permalink: '/DS/Tensorflow'
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: category
-title: DS/ML
+title: DS-ML
 permalink: '/DS/ML'
 ---
 

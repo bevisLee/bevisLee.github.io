@@ -1,6 +1,6 @@
 ---
 layout: category
-title: DE/Cloud
+title: DE-Cloud
 permalink: '/DE/Cloud'
 ---
 

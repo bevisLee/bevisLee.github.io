@@ -1,6 +1,6 @@
 ---
 layout: category
-title: DS/RL
+title: DS-RL
 permalink: '/DS/RL'
 ---
 
