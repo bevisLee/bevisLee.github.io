@@ -2,7 +2,7 @@
 layout: post
 title: "Cloud ML Study 발표 자료"
 comments: true
-categories : [DE/Cloud]
+categories : [de/cloud]
 tags: [GCP,cloudML]
 
 ---

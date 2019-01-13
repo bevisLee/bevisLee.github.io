@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Data Engine/Cloud
-permalink: '/DE/Cloud'
+permalink: '/de/cloud'
 ---
 
 Another sample category page.

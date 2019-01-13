@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Data Base/SQL
-permalink: '/DB/SQL'
+permalink: '/db/sql'
 ---
 
 Another sample category page.

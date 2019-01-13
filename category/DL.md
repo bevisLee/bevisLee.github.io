@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Data Science/Deep Learning
-permalink: '/DS/DL'
+permalink: '/ds/dl'
 ---
 
 Another sample category page.

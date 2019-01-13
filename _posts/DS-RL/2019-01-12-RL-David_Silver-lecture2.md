@@ -2,7 +2,7 @@
 layout: post
 title: "Lecture 2: Markov Decision Process"
 comments: true
-categories : [DS/RL]
+categories : [ds/rl]
 tags: [RL]
 
 ---
